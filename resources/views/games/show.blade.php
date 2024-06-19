@@ -1,11 +1,12 @@
 @php
-    use App\Models\Game; // Import the Game model class
+    use App\Models\Game;
 @endphp
 
 <html>
 
 <body>
-    {{ dd(Game::find(request('id'))) }};
+    Name: {{ Game::find(request('id'))->name }}
+    <a href="{{ URL::to() }}"></a>
 </body>
 
 </html>
