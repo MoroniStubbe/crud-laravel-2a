@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Game::factory(10)->create();
+        Game::factory(100)->create();
     }
 }
