@@ -6,7 +6,7 @@
 
 <body>
     Name: {{ Game::find(request('id'))->name }}
-    <a href="{{ URL::to('update', request('id')) }}">Update</a>
+    <a href="{{ URL::to('games/update', request('id')) }}">Update</a>
 </body>
 
 </html>

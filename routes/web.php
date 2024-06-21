@@ -29,3 +29,7 @@ Route::get('/games/{id}', function ($id) {
     $games = Game::all();
     return view('games.show', compact('games'));
 })->name('games.show');
+
+Route::get('/games/update/{id}', function ($id) {
+    return view('games.update');
+})->name('update');
