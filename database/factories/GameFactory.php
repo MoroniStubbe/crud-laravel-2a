@@ -17,7 +17,9 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "name" => "test",
+            "price" => 1,
+            "release_year" => 1
         ];
     }
 }
