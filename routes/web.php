@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Game;
 
@@ -26,10 +27,17 @@ Route::get('/games/create', function () {
 })->name('games.create');
 
 Route::get('/games/{id}', function ($id) {
-    $games = Game::all();
-    return view('games.show', compact('games'));
+    return view('games.show', compact('id'));
 })->name('games.show');
 
 Route::get('/games/update/{id}', function ($id) {
-    return view('games.update');
+    return view('games.update', compact('id'));
 })->name('update');
+
+Route::post('/games/update', function (Request $request) {
+    $id = $request->input('id');
+    $game = Game::find($id);
+    $game->name = $request->input('name');
+    $game->save();
+    return view('games.update', compact('id'));
+});
