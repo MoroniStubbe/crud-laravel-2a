@@ -13,9 +13,11 @@ Route::get('/games', function () {
     return view('games.index', compact('games'));
 })->name('games');
 
-Route::post('/games', function (\Illuminate\Http\Request $request) {
+Route::post('/games', function (Request $request) {
     $game =  $request->validate([
         'name' => 'required|string',
+        'price' => 'required|integer',
+        'release_year' => 'required|integer'
     ]);
 
     Game::create($game);
