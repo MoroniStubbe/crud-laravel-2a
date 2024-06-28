@@ -16,7 +16,7 @@ Route::get('/games', function () {
 Route::post('/games', function (Request $request) {
     $game =  $request->validate([
         'name' => 'required|string',
-        'price' => 'required|integer',
+        'price' => 'required|numeric',
         'release_year' => 'required|integer'
     ]);
 
